@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svgLineAni</title>
+    <style>
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        svg {
+            overflow: visible;
+
+        }
+
+        
+        path {
+            /* 700은, 윤곽선(stroke)의 대시 배열!
+            대시배열은 svg에서 사용되는 윤곽선을 지정하는데 사용하는 용어
+            대시배열을 통해 실선, 공백, 선 등을 번갈아가며
+            나타내는 선의 패턴*/
+            stroke-dasharray: 700;
+            stroke-dashoffset: 700;
+            /* stroke-dashoffset 시작 위치 조절
+            선이 그려지는 효과를 만듬 */
+            animation: draw 2s forwards;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- viewBox : SVG의 크기와 좌표시스템 정의하는데 사용되는 구조 
+    0 0 280 13 → min-x, min-y, width, height  -->
+
+   
+    <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 186 177" fill="none">
+        <path
+            d="M97.7553 31.4549L93 16.8197L88.2447 31.4549L74.7739 72.9139H31.1813H15.7929L28.2424 81.959L63.5095 107.582L50.0387 149.041L45.2834 163.676L57.7329 154.631L93 129.008L128.267 154.631L140.717 163.676L135.961 149.041L122.49 107.582L157.758 81.959L170.207 72.9139H154.819H111.226L97.7553 31.4549Z"
+            stroke="#F6FB24" stroke-width="10" />
+            
+    </svg>
+
+    </svg>
+</body>
+
+</html>
